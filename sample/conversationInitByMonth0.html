@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+
+        <script type="text/javascript">
+          onReady('#chart', () => {
+            const chart = c3.generate({
+              data: {
+                json: [{"date":"'11-05","Person A":14,"Peter Han":1},{"date":"'11-06","Peter Han":5,"Person A":4},{"date":"'11-07","Person A":19,"Peter Han":5},{"date":"'11-08","Person A":42,"Peter Han":19},{"date":"'11-09","Person A":78,"Peter Han":21},{"date":"'11-10","Person A":86,"Peter Han":25},{"date":"'11-11","Person A":38,"Peter Han":11},{"date":"'11-12","Person A":57,"Peter Han":44},{"date":"'12-01","Person A":32,"Peter Han":25},{"date":"'12-02","Person A":60,"Peter Han":16},{"date":"'12-03","Person A":59,"Peter Han":27},{"date":"'12-04","Peter Han":34,"Person A":85},{"date":"'12-05","Person A":73,"Peter Han":24},{"date":"'12-06","Person A":74,"Peter Han":28},{"date":"'12-07","Peter Han":34,"Person A":93},{"date":"'12-08","Peter Han":48,"Person A":62},{"date":"'12-09","Person A":67,"Peter Han":27},{"date":"'12-10","Person A":74,"Peter Han":33},{"date":"'12-11","Person A":62,"Peter Han":18},{"date":"'12-12","Person A":58,"Peter Han":22},{"date":"'13-01","Person A":53,"Peter Han":56},{"date":"'13-02","Peter Han":50,"Person A":48},{"date":"'13-03","Peter Han":76,"Person A":59},{"date":"'13-04","Person A":89,"Peter Han":88},{"date":"'13-05","Peter Han":70,"Person A":87},{"date":"'13-06","Peter Han":100,"Person A":80},{"date":"'13-07","Peter Han":74,"Person A":60},{"date":"'13-08","Peter Han":68,"Person A":90},{"date":"'13-09","Peter Han":61,"Person A":74},{"date":"'13-10","Person A":33,"Peter Han":16},{"date":"'13-11","Person A":52,"Peter Han":16},{"date":"'13-12","Person A":38,"Peter Han":16},{"date":"'14-01","Peter Han":35,"Person A":54},{"date":"'14-02","Peter Han":29,"Person A":67},{"date":"'14-03","Person A":57,"Peter Han":30},{"date":"'14-04","Person A":55,"Peter Han":17},{"date":"'14-05","Person A":53,"Peter Han":17},{"date":"'14-06","Peter Han":34,"Person A":75},{"date":"'14-07","Person A":35,"Peter Han":22},{"date":"'14-08","Person A":29,"Peter Han":27},{"date":"'14-09","Peter Han":38,"Person A":46},{"date":"'14-10","Person A":48,"Peter Han":40},{"date":"'14-11","Peter Han":27,"Person A":57},{"date":"'14-12","Person A":55,"Peter Han":14},{"date":"'15-01","Person A":37,"Peter Han":22},{"date":"'15-02","Person A":42,"Peter Han":29},{"date":"'15-03","Person A":71,"Peter Han":33},{"date":"'15-04","Peter Han":29,"Person A":76},{"date":"'15-05","Person A":41,"Peter Han":11},{"date":"'15-06","Peter Han":14,"Person A":61},{"date":"'15-07","Peter Han":31,"Person A":61},{"date":"'15-08","Person A":67,"Peter Han":46},{"date":"'15-09","Peter Han":36,"Person A":53},{"date":"'15-10","Person A":22,"Peter Han":10},{"date":"'15-11","Person A":20,"Peter Han":11},{"date":"'15-12","Person A":35,"Peter Han":9},{"date":"'16-01","Person A":28,"Peter Han":12},{"date":"'16-02","Person A":35,"Peter Han":21},{"date":"'16-03","Peter Han":19,"Person A":33},{"date":"'16-04","Person A":21,"Peter Han":6},{"date":"'16-05","Person A":43,"Peter Han":21},{"date":"'16-06","Person A":43,"Peter Han":43},{"date":"'16-07","Person A":72,"Peter Han":55},{"date":"'16-08","Peter Han":67,"Person A":63},{"date":"'16-09","Peter Han":79,"Person A":91},{"date":"'16-10","Person A":89,"Peter Han":87},{"date":"'16-11","Person A":94,"Peter Han":93},{"date":"'16-12","Person A":102,"Peter Han":56},{"date":"'17-01","Person A":99,"Peter Han":99},{"date":"'17-02","Peter Han":75,"Person A":101},{"date":"'17-03","Peter Han":64,"Person A":99},{"date":"'17-04","Person A":74,"Peter Han":60},{"date":"'17-05","Peter Han":60,"Person A":90},{"date":"'17-06","Person A":22,"Peter Han":7}],
+                keys: {
+                  value: ["Person A","Peter Han"],
+                  x: "date",
+                },
+                type: "bar",
+                x: "date",
+              },
+              axis: {
+                x: {
+                  height: 50,
+                  label: {
+                    text: "Month",
+                  },
+                  tick: {
+                    rotate: 90,
+                    multiline: false,
+                  },
+                  type: "category",
+                },
+                y: {
+                  label: {
+                    text: "Frequency",
+                  },
+                },
+              },
+              size: {
+                height: 512,
+              },
+              title: {
+                text: "Conversation Initialized by Month",
+              },
+            });
+          });
+
+          function onReady (selector, callback) {
+            const intervalID = window.setInterval(() => {
+              if (document.querySelector(selector)) {
+                window.clearInterval(intervalID);
+                callback.call(this);
+              }
+            }, 500);
+          }
+        </script>
+      </head>
+      <body>
+        <div id="chart" />
+      </body>
+    </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+
+        <script type="text/javascript">
+          onReady('#chart', () => {
+            const chart = c3.generate({
+              data: {
+                json: [{"word":"lol","Person A":10846,"Peter Han":18904},{"word":"lmao","Person A":9,"Peter Han":527},{"word":"kek","Person A":282,"Peter Han":383},{"word":"fuck","Person A":3393,"Peter Han":171},{"word":"gg","Person A":1850,"Peter Han":1189},{"word":"wtf","Person A":382,"Peter Han":683},{"word":"shit","Person A":5413,"Peter Han":813},{"word":"wew","Person A":2,"Peter Han":335},{"word":"wewlad","Person A":0,"Peter Han":20},{"word":"faggot","Person A":390,"Peter Han":92},{"word":"m8","Person A":5,"Peter Han":20},{"word":"idk","Person A":1227,"Peter Han":737},{"word":"lel","Person A":149,"Peter Han":440},{"word":"rip","Person A":415,"Peter Han":381},{"word":"mfw","Person A":328,"Peter Han":198},{"word":"tfw","Person A":11,"Peter Han":78}],
+                keys: {
+                  value: ["Person A","Peter Han"],
+                  x: "word",
+                },
+                type: "bar",
+                x: "word",
+              },
+              axis: {
+                x: {
+                  height: 50,
+                  label: {
+                    text: "Word",
+                  },
+                  tick: {
+                    rotate: 0,
+                    multiline: false,
+                  },
+                  type: "category",
+                },
+                y: {
+                  label: {
+                    text: "Frequency",
+                  },
+                },
+              },
+              size: {
+                height: 512,
+              },
+              title: {
+                text: "Word Frequency in Messages",
+              },
+            });
+          });
+
+          function onReady (selector, callback) {
+            const intervalID = window.setInterval(() => {
+              if (document.querySelector(selector)) {
+                window.clearInterval(intervalID);
+                callback.call(this);
+              }
+            }, 500);
+          }
+        </script>
+      </head>
+      <body>
+        <div id="chart" />
+      </body>
+    </html>

@@ -1,0 +1,6 @@
+# packages
+node_modules
+
+# privy to me
+data
+output

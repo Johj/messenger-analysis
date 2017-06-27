@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+
+        <script type="text/javascript">
+          onReady('#chart', () => {
+            const chart = c3.generate({
+              data: {
+                json: [{"date":"'11-04","Person A":1},{"date":"'11-05","Person A":1692,"Peter Han":1951},{"date":"'11-06","Peter Han":1420,"Person A":1577},{"date":"'11-07","Person A":2219,"Peter Han":2224},{"date":"'11-08","Person A":4522,"Peter Han":3806},{"date":"'11-09","Person A":9631,"Peter Han":7978},{"date":"'11-10","Person A":6265,"Peter Han":5525},{"date":"'11-11","Person A":3565,"Peter Han":3767},{"date":"'11-12","Person A":5648,"Peter Han":5373},{"date":"'12-01","Person A":3038,"Peter Han":2646},{"date":"'12-02","Person A":3266,"Peter Han":3035},{"date":"'12-03","Person A":2956,"Peter Han":3774},{"date":"'12-04","Peter Han":7799,"Person A":7923},{"date":"'12-05","Person A":4631,"Peter Han":4603},{"date":"'12-06","Person A":5122,"Peter Han":4748},{"date":"'12-07","Peter Han":4751,"Person A":5920},{"date":"'12-08","Peter Han":3306,"Person A":3149},{"date":"'12-09","Person A":2364,"Peter Han":2190},{"date":"'12-10","Person A":3442,"Peter Han":2391},{"date":"'12-11","Person A":2073,"Peter Han":1820},{"date":"'12-12","Person A":2309,"Peter Han":2026},{"date":"'13-01","Person A":1537,"Peter Han":1582},{"date":"'13-02","Peter Han":1568,"Person A":1646},{"date":"'13-03","Peter Han":3094,"Person A":2301},{"date":"'13-04","Person A":4037,"Peter Han":4106},{"date":"'13-05","Peter Han":4297,"Person A":4979},{"date":"'13-06","Peter Han":6921,"Person A":6916},{"date":"'13-07","Peter Han":3448,"Person A":3020},{"date":"'13-08","Peter Han":2852,"Person A":4041},{"date":"'13-09","Peter Han":1305,"Person A":1917},{"date":"'13-10","Person A":643,"Peter Han":547},{"date":"'13-11","Person A":1229,"Peter Han":659},{"date":"'13-12","Person A":934,"Peter Han":644},{"date":"'14-01","Peter Han":802,"Person A":989},{"date":"'14-02","Peter Han":886,"Person A":1507},{"date":"'14-03","Person A":1543,"Peter Han":992},{"date":"'14-04","Person A":827,"Peter Han":562},{"date":"'14-05","Person A":781,"Peter Han":546},{"date":"'14-06","Peter Han":1150,"Person A":1289},{"date":"'14-07","Person A":509,"Peter Han":399},{"date":"'14-08","Person A":544,"Peter Han":391},{"date":"'14-09","Peter Han":1143,"Person A":1046},{"date":"'14-10","Person A":1439,"Peter Han":1289},{"date":"'14-11","Peter Han":2116,"Person A":2572},{"date":"'14-12","Person A":1210,"Peter Han":784},{"date":"'15-01","Person A":699,"Peter Han":442},{"date":"'15-02","Person A":1467,"Peter Han":1232},{"date":"'15-03","Peter Han":1109,"Person A":1334},{"date":"'15-04","Peter Han":1750,"Person A":2294},{"date":"'15-05","Person A":538,"Peter Han":310},{"date":"'15-06","Peter Han":392,"Person A":754},{"date":"'15-07","Peter Han":526,"Person A":779},{"date":"'15-08","Person A":828,"Peter Han":774},{"date":"'15-09","Peter Han":532,"Person A":733},{"date":"'15-10","Person A":265,"Peter Han":186},{"date":"'15-11","Person A":543,"Peter Han":276},{"date":"'15-12","Person A":550,"Peter Han":276},{"date":"'16-01","Person A":251,"Peter Han":116},{"date":"'16-02","Person A":896,"Peter Han":438},{"date":"'16-03","Peter Han":282,"Person A":459},{"date":"'16-04","Person A":185,"Peter Han":82},{"date":"'16-05","Person A":938,"Peter Han":565},{"date":"'16-06","Person A":1595,"Peter Han":1040},{"date":"'16-07","Person A":2045,"Peter Han":1230},{"date":"'16-08","Peter Han":1539,"Person A":2580},{"date":"'16-09","Peter Han":2057,"Person A":2969},{"date":"'16-10","Person A":3695,"Peter Han":2373},{"date":"'16-11","Person A":3705,"Peter Han":2310},{"date":"'16-12","Person A":3572,"Peter Han":1593},{"date":"'17-01","Person A":5732,"Peter Han":4060},{"date":"'17-02","Peter Han":2714,"Person A":4649},{"date":"'17-03","Peter Han":1108,"Person A":2331},{"date":"'17-04","Person A":2007,"Peter Han":1245},{"date":"'17-05","Peter Han":1087,"Person A":1614},{"date":"'17-06","Person A":337,"Peter Han":101}],
+                keys: {
+                  value: ["Person A","Peter Han"],
+                  x: "date",
+                },
+                type: "bar",
+                x: "date",
+              },
+              axis: {
+                x: {
+                  height: 50,
+                  label: {
+                    text: "Month",
+                  },
+                  tick: {
+                    rotate: 90,
+                    multiline: false,
+                  },
+                  type: "category",
+                },
+                y: {
+                  label: {
+                    text: "Frequency",
+                  },
+                },
+              },
+              size: {
+                height: 512,
+              },
+              title: {
+                text: "Messages by Month",
+              },
+            });
+          });
+
+          function onReady (selector, callback) {
+            const intervalID = window.setInterval(() => {
+              if (document.querySelector(selector)) {
+                window.clearInterval(intervalID);
+                callback.call(this);
+              }
+            }, 500);
+          }
+        </script>
+      </head>
+      <body>
+        <div id="chart" />
+      </body>
+    </html>

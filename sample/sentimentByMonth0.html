@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+
+        <script type="text/javascript">
+          onReady('#chart', () => {
+            const chart = c3.generate({
+              data: {
+                json: [{"date":"'11-04","Person A":"2.00000"},{"date":"'11-05","Person A":"0.47872","Peter Han":"0.56176"},{"date":"'11-06","Peter Han":"0.58380","Person A":"0.36652"},{"date":"'11-07","Person A":"0.46823","Peter Han":"0.57194"},{"date":"'11-08","Person A":"0.32751","Peter Han":"0.64582"},{"date":"'11-09","Person A":"0.35209","Peter Han":"0.73703"},{"date":"'11-10","Person A":"0.26832","Peter Han":"0.67421"},{"date":"'11-11","Person A":"0.06003","Peter Han":"0.67375"},{"date":"'11-12","Person A":"0.22822","Peter Han":"0.63410"},{"date":"'12-01","Person A":"0.29888","Peter Han":"0.68254"},{"date":"'12-02","Person A":"0.11758","Peter Han":"0.73970"},{"date":"'12-03","Person A":"0.44012","Peter Han":"0.62321"},{"date":"'12-04","Peter Han":"0.70214","Person A":"0.42206"},{"date":"'12-05","Person A":"0.42086","Peter Han":"0.66348"},{"date":"'12-06","Person A":"0.31921","Peter Han":"0.54339"},{"date":"'12-07","Peter Han":"0.73079","Person A":"0.23564"},{"date":"'12-08","Peter Han":"0.52299","Person A":"0.28326"},{"date":"'12-09","Person A":"0.28553","Peter Han":"0.48721"},{"date":"'12-10","Person A":"0.13219","Peter Han":"0.56922"},{"date":"'12-11","Person A":"0.12301","Peter Han":"0.50385"},{"date":"'12-12","Person A":"0.10394","Peter Han":"0.48272"},{"date":"'13-01","Person A":"0.53871","Peter Han":"0.65297"},{"date":"'13-02","Peter Han":"0.61352","Person A":"0.30863"},{"date":"'13-03","Peter Han":"0.55753","Person A":"0.32942"},{"date":"'13-04","Person A":"0.20535","Peter Han":"0.54067"},{"date":"'13-05","Peter Han":"0.52013","Person A":"0.14019"},{"date":"'13-06","Peter Han":"0.39546","Person A":"0.30625"},{"date":"'13-07","Peter Han":"0.46462","Person A":"0.31954"},{"date":"'13-08","Peter Han":"0.48422","Person A":"0.25909"},{"date":"'13-09","Peter Han":"0.45747","Person A":"0.19927"},{"date":"'13-10","Person A":"0.47278","Peter Han":"0.25777"},{"date":"'13-11","Person A":"0.33116","Peter Han":"0.52504"},{"date":"'13-12","Person A":"0.02570","Peter Han":"0.45963"},{"date":"'14-01","Peter Han":"0.47631","Person A":"0.32255"},{"date":"'14-02","Peter Han":"0.65237","Person A":"0.12077"},{"date":"'14-03","Person A":"0.26442","Peter Han":"0.64415"},{"date":"'14-04","Person A":"0.45707","Peter Han":"0.85587"},{"date":"'14-05","Person A":"0.23431","Peter Han":"0.59158"},{"date":"'14-06","Peter Han":"0.57913","Person A":"0.20559"},{"date":"'14-07","Person A":"0.17682","Peter Han":"0.53885"},{"date":"'14-08","Person A":"0.48897","Peter Han":"0.79795"},{"date":"'14-09","Peter Han":"0.51706","Person A":"0.27247"},{"date":"'14-10","Person A":"0.42391","Peter Han":"0.65089"},{"date":"'14-11","Peter Han":"0.48629","Person A":"0.33942"},{"date":"'14-12","Person A":"-0.09339","Peter Han":"0.77041"},{"date":"'15-01","Person A":"0.38484","Peter Han":"0.71946"},{"date":"'15-02","Person A":"0.19836","Peter Han":"0.63149"},{"date":"'15-03","Peter Han":"0.42651","Person A":"0.09520"},{"date":"'15-04","Peter Han":"0.43886","Person A":"-0.03008"},{"date":"'15-05","Person A":"0.06320","Peter Han":"0.54839"},{"date":"'15-06","Peter Han":"0.59949","Person A":"0.09814"},{"date":"'15-07","Peter Han":"0.50570","Person A":"0.15661"},{"date":"'15-08","Person A":"0.11715","Peter Han":"0.36693"},{"date":"'15-09","Peter Han":"0.43233","Person A":"0.19236"},{"date":"'15-10","Person A":"0.21887","Peter Han":"0.37097"},{"date":"'15-11","Person A":"-0.00921","Peter Han":"0.61232"},{"date":"'15-12","Person A":"0.30000","Peter Han":"0.39493"},{"date":"'16-01","Person A":"0.11554","Peter Han":"0.68966"},{"date":"'16-02","Person A":"-0.13839","Peter Han":"0.39498"},{"date":"'16-03","Peter Han":"0.44326","Person A":"0.24401"},{"date":"'16-04","Person A":"0.27027","Peter Han":"0.52439"},{"date":"'16-05","Person A":"0.19190","Peter Han":"0.61062"},{"date":"'16-06","Person A":"0.16991","Peter Han":"0.58365"},{"date":"'16-07","Person A":"0.15550","Peter Han":"0.57154"},{"date":"'16-08","Peter Han":"0.54711","Person A":"0.18256"},{"date":"'16-09","Peter Han":"0.56441","Person A":"0.19973"},{"date":"'16-10","Person A":"0.22571","Peter Han":"0.52887"},{"date":"'16-11","Person A":"0.14224","Peter Han":"0.40000"},{"date":"'16-12","Person A":"0.09686","Peter Han":"0.47144"},{"date":"'17-01","Person A":"0.17847","Peter Han":"0.44286"},{"date":"'17-02","Peter Han":"0.43847","Person A":"0.06410"},{"date":"'17-03","Peter Han":"0.52437","Person A":"0.00558"},{"date":"'17-04","Person A":"-0.06776","Peter Han":"0.42651"},{"date":"'17-05","Peter Han":"0.42686","Person A":"0.05638"},{"date":"'17-06","Person A":"0.42730","Peter Han":"1.00000"}],
+                keys: {
+                  value: ["Person A","Peter Han"],
+                  x: "date",
+                },
+                type: "line",
+                x: "date",
+              },
+              axis: {
+                x: {
+                  height: 50,
+                  label: {
+                    text: "Month",
+                  },
+                  tick: {
+                    rotate: 90,
+                    multiline: false,
+                  },
+                  type: "category",
+                },
+                y: {
+                  label: {
+                    text: "Average Sentiment Score",
+                  },
+                },
+              },
+              size: {
+                height: 512,
+              },
+              title: {
+                text: "Average Message Sentiment Score by Month",
+              },
+            });
+          });
+
+          function onReady (selector, callback) {
+            const intervalID = window.setInterval(() => {
+              if (document.querySelector(selector)) {
+                window.clearInterval(intervalID);
+                callback.call(this);
+              }
+            }, 500);
+          }
+        </script>
+      </head>
+      <body>
+        <div id="chart" />
+      </body>
+    </html>
